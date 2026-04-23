@@ -1,123 +1,261 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>成都 · 切片 (2026.04)</title>
-    <meta name="description" content="26.4.23/锦江-青羊。">
-    <meta property="og:title" content="成都 · 城市切片">
-    <meta property="og:description" content="2026年4月，一次步行的观察。">
-    <meta property="og:image" content="IMG_7208.JPG">
-    <link rel="shortcut icon" href="IMG_7208.JPG">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-
-    <style>
-        /* 基础重置 */
-        * {margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-        :root {
-            --ink:#1a1f2e;--sub:#5a6278;--line:#e8eaf2;--bg:#f5f6fa;--white:#fff;
-            --accent:#2d6cdf;
-        }
-        body {background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;min-height:100vh;padding-bottom:80px}
-        
-        /* 截图容器：包裹所有需要显示的内容 */
-        #captureArea { background: var(--bg); width: 100%; overflow: hidden; }
-
-        /* 黑色头部区域样式 */
-        .hero {background:linear-gradient(145deg,#0f2027 0%,#203a43 50%,#2c5364 100%);padding:52px 20px 32px;position:relative;overflow:hidden}
-        .hero::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0/30px 30px 0 0}
-        .hero-label {display:inline-block;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);font-size:11px;letter-spacing:2px;padding:4px 12px;border-radius:100px;margin-bottom:16px;backdrop-filter:blur(4px)}
-        .hero h1 {color:#fff;font-size:26px;font-weight:700;line-height:1.2;margin-bottom:4px;position:relative}
-        .hero p {color:rgba(255,255,255,0.55);font-size:13px;line-height:1.6;position:relative}
-        
-        /* 微信号样式 */
-        .wechat-id {
-            color: rgba(255, 255, 255, 0.35);
-            font-size: 11px;
-            font-weight: 300;
-            margin-top: 6px;
-            letter-spacing: 0.5px;
-            position: relative;
-        }
-
-        .hero-stats {display:flex;margin-top:24px;background:rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;position:relative}
-        .hero-stat {flex:1;padding:12px 8px;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
-        .hero-stat:last-child {border-right:none}
-        .hero-stat .n {color:#fff;font-size:20px;font-weight:700}
-        .hero-stat .l {color:rgba(255,255,255,0.45);font-size:10px;margin-top:2px}
-
-        /* 下方内容区域基础容器 */
-        .main-content { padding: 20px; }
-
-        /* 保存按钮悬浮样式 */
-        #saveBtn {
-            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 9999;
-            padding: 12px 30px; background: #1a1f2e; color: white;
-            border: 1px solid rgba(255,255,255,0.2); border-radius: 30px;
-            font-size: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); cursor: pointer;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>成都城市切片 · 2026.04.23</title>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+--ink:#1a1f2e;--sub:#5a6278;--line:#e8eaf2;--bg:#f5f6fa;--white:#fff;
+--health:#00a878;--infra:#e85d3a;--urban:#3a7bd5;--nature:#6ab04c;--social:#9b59b6;--accent:#2d6cdf;
+}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;min-height:100vh;padding-bottom:80px}
+/* 截图目标容器 */
+#captureArea { background: var(--bg); width: 100%; overflow: hidden; }
+.hero{background:linear-gradient(145deg,#0f2027 0%,#1a3a4a 50%,#0d3b2e 100%);padding:52px 20px 32px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0/30px 30px 0 0}
+.hero-label{display:inline-block;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);font-size:11px;letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{color:#fff;font-size:24px;font-weight:700;line-height:1.3;margin-bottom:8px;position:relative}
+.hero p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.6;position:relative}
+/* 微信号专用样式 */
+.wechat-id{color:rgba(255,255,255,0.3);font-size:11px;margin-top:6px;position:relative}
+.hero-stats{display:flex;margin-top:24px;background:rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;position:relative}
+.hero-stat{flex:1;padding:12px 8px;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
+.hero-stat:last-child{border-right:none}
+.hero-stat .n{color:#fff;font-size:20px;font-weight:700}
+.hero-stat .l{color:rgba(255,255,255,0.45);font-size:10px;margin-top:2px}
+.tabs{display:flex;gap:8px;padding:28px 16px 12px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:12px;border:1.5px solid var(--line);background:var(--white);color:var(--sub);cursor:pointer;white-space:nowrap}
+.tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.section-head{padding:4px 16px 10px;font-size:12px;color:var(--sub);letter-spacing:1px}
+.cards{padding:0 16px;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card-body{padding:14px 16px 16px}
+.card-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-tag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px}
+.tag-health{background:#e8f8f3;color:var(--health)}
+.tag-infra{background:#fef0ec;color:var(--infra)}
+.tag-urban{background:#eaf2fe;color:var(--urban)}
+.tag-nature{background:#f0f8e8;color:var(--nature)}
+.tag-social{background:#f5eeff;color:var(--social)}
+.card-time{font-size:11px;color:var(--sub)}
+.card-title{font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.4}
+.card-desc{font-size:13px;color:var(--sub);line-height:1.7;margin-bottom:14px}
+.insight{background:#f8f9ff;border-left:3px solid var(--accent);padding:10px 12px;border-radius:0 8px 8px 0;font-size:12px;color:#3a4a6a;line-height:1.6;margin-bottom:14px}
+.insight b{color:var(--accent)}
+.map-btns{display:flex;gap:8px}
+.map-btn{flex:1;padding:10px 8px;border-radius:10px;border:none;font-size:12px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;display:block}
+.btn-amap{background:#1aad19;color:#fff}
+.btn-apple{background:#000;color:#fff}
+.chain{margin:10px 0 14px;padding:12px;background:#f8f9ff;border-radius:10px;font-size:11px;color:#3a4a6a;line-height:2}
+.chain-item{display:flex;align-items:center;gap:6px}
+.chain-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.footer{margin:32px 16px 0;padding:20px;background:var(--white);border-radius:16px;text-align:center}
+.footer p{font-size:12px;color:var(--sub);line-height:1.8}
+.footer .made{font-size:11px;color:#bbb;margin-top:8px}
+/* 保存按钮 */
+#saveBtn{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:999;padding:12px 25px;background:#1a1f2e;color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:30px;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);font-size:14px}
+</style>
 </head>
 <body>
 
-    <div id="captureArea">
-        <div class="hero">
-            <div class="hero-label">CHENGDU · 锦江区</div>
-            <h1>成都城市切片</h1>
-            <h1>一次步行的观察</h1>
-            
-            <p>2026年4月23日 · 书院街街道周边</p>
-            <p>从医院到河道，记录路上所见</p>
-            
-            <div class="wechat-id">WeChat: -Pudgala</div>
+<div id="captureArea">
+<div class="hero">
+<div class="hero-label">CHENGDU · 锦江区</div>
+<h1>成都城市切片<br>一次步行的观察</h1>
+<p>2026年4月23日 · 书院街街道周边<br>从医院到河道，记录路上所见</p>
+<div class="wechat-id">WeChat: -Pudgala</div>
+<div class="hero-stats">
+<div class="hero-stat"><div class="n">14</div><div class="l">观察点</div></div>
+<div class="hero-stat"><div class="n">5</div><div class="l">分类</div></div>
+<div class="hero-stat"><div class="n">~3km</div><div class="l">步行</div></div>
+<div class="hero-stat"><div class="n">锦江</div><div class="l">所在区</div></div>
+</div>
+</div>
 
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <div class="n">14</div>
-                    <div class="l">观察点</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="n">5</div>
-                    <div class="l">分类</div>
-                </div>
-                <div class="hero-stat">
-                    <div class="n">~3km</div>
-                    <div class="l">步行</div>
-                </div>
-            </div>
-        </div>
+<div class="tabs">
+<div class="tab active" onclick="filterCards('all',this)">全部</div>
+<div class="tab" onclick="filterCards('infra',this)">⚡ 基础设施</div>
+<div class="tab" onclick="filterCards('urban',this)">🏙️ 城市交通</div>
+<div class="tab" onclick="filterCards('social',this)">🏘️ 社区治理</div>
+<div class="tab" onclick="filterCards('nature',this)">🌿 绿化水系</div>
+<div class="tab" onclick="filterCards('health',this)">🏥 医疗</div>
+</div>
 
-        <div class="main-content">
-            <div style="text-align: center; color: #999; padding: 40px 0;">
-                请在此处粘贴你原本网页下方的 HTML 内容（如分类、记录日志等）
-            </div>
-        </div>
-    </div>
+<div class="section-head">今日记录 / TODAY'S LOG</div>
+<div class="cards" id="card-container">
 
-    <button id="saveBtn">生成长名信片</button>
+<div class="card" data-cat="health">
+<img src="compressed_IMG_7192.JPG" alt="医院自助机">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-health">医疗</span><span class="card-time">11:41</span></div>
+<div class="card-title">三甲医院 · 智能自助服务机</div>
+<div class="card-desc">建设银行智能自助终端，支持发票打印、检验报告、门诊缴费、当日挂号。医院数字化程度较高，多数行政流程可自助完成。</div>
+<div class="insight"><b>观察：</b>三甲医院数字化已延伸至末梢流程，背后接入医保局统一平台。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0631,30.6598&name=成都市第二人民医院" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?q=成都市第二人民医院&ll=30.6598,104.0631" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
-    <script>
-    document.getElementById('saveBtn').onclick = function() {
-        // 抓取整个内容容器
-        const target = document.getElementById('captureArea');
-        // 截图时隐藏按钮
-        this.style.display = 'none';
-        
-        html2canvas(target, {
-            scale: 3, // 高清倍率，发朋友圈不模糊
-            useCORS: true,
-            backgroundColor: "#f5f6fa" // 匹配 body 背景色
-        }).then(canvas => {
-            const link = document.createElement('a');
-            link.download = '成都_城市切片_名信片.png';
-            link.href = canvas.toDataURL("image/png");
-            link.click();
-            // 截图完显示按钮
-            this.style.display = 'block';
-        });
-    };
-    </script>
+<div class="card" data-cat="health">
+<img src="compressed_IMG_7191.JPG" alt="影像科走廊">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-health">医疗</span><span class="card-time">11:45</span></div>
+<div class="card-title">影像科走廊 · 放射防护标准配置</div>
+<div class="card-desc">标准放射科走廊，铅门+射线警示标志+黄黑警戒线，候诊座椅整洁。三甲医院放射科防护规范达标，硬件设施完善。</div>
+<div class="insight"><b>观察：</b>国内三甲医院放射防护硬件已与国际标准接轨，软件管理持续规范化。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0625,30.6603&name=影像科" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?ll=30.6603,104.0625&q=影像科" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
+<div class="card" data-cat="health">
+<img src="compressed_IMG_7194.JPG" alt="影像科须知">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-health">医疗</span><span class="card-time">11:50</span></div>
+<div class="card-title">影像科取片须知 · 政策变化</div>
+<div class="card-desc">门诊患者次日下午4:30后自助取片。2025年6月15日起：X光/CT/MRI胶片改为收费提供，反映医院数字化转型进程。</div>
+<div class="insight"><b>趋势：</b>物理胶片逐步商品化，电子报告成为主流交付方式。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0618,30.6601&name=影像科取片处" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?ll=30.6601,104.0618&q=影像科" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="infra">
+<img src="compressed_IMG_7204.JPG" alt="老旧配电箱">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-infra">基础设施</span><span class="card-time">12:05</span></div>
+<div class="card-title">街边配电箱 · 胶带捆扎维修状态</div>
+<div class="card-desc">快餐店门口旁，大型配电箱门开着，内部线路外露，用透明胶带缠绕固定。门板锈迹严重，处于"能用就行"的维护状态。</div>
+<div class="insight"><b>对比：</b>德日城市此类设备基本地埋或入室。老城区改造成本高，历史遗留问题形成将就式维护逻辑。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0640,30.6590&name=配电箱观察点" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?ll=30.6590,104.0640&q=观察点" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="urban">
+<img src="compressed_IMG_7205.JPG" alt="十字路口">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-urban">城市交通</span><span class="card-time">12:08</span></div>
+<div class="card-title">十字路口 · 新旧建筑叠层</div>
+<div class="card-desc">电动车、摩托、轿车、共享单车同时通行。五六层老式公寓与玻璃幕墙高层并列。路口监控摄像头全覆盖。</div>
+<div class="insight"><b>观察：</b>电动车数量已超燃油摩托，反映低碳出行的自发转型趋势。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0650,30.6585&name=十字路口" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?ll=30.6585,104.0650&q=观察点" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="social">
+<img src="compressed_IMG_7207.JPG" alt="社区公告栏">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-social">社区治理</span><span class="card-time">12:15</span></div>
+<div class="card-title">福宇街社区 · 居务公示栏</div>
+<div class="card-desc">锦江区书院街街道。覆盖0.40平方公里，住宅5203户，常住人口10407人。公示居委会成员、年度工作计划、财务情况。</div>
+<div class="insight"><b>治理模式：</b>社区将治理信息全部公开上墙，选择了最低技术门槛的公示方式，便于居民查阅。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0655,30.6580&name=福宇街社区" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?ll=30.6580,104.0655&q=福宇街社区" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="urban">
+<img src="compressed_IMG_7208.JPG" alt="共享单车">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-urban">城市交通</span><span class="card-time">12:18</span></div>
+<div class="card-title">共享单车聚集点 · 多品牌并存</div>
+<div class="card-desc">路口密集停放，黄色美团单车与青绿色青桔单车并列，数量超过50辆。高密度反映该路口骑行需求热度高。</div>
+<div class="insight"><b>全球领先：</b>国内共享单车渗透率全球最高，无桩停放模式已被多个国家和地区效仿。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0645,30.6575&name=共享单车聚集点" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?ll=30.6575,104.0645&q=观察点" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="infra">
+<img src="compressed_IMG_7211.JPG" alt="电信设备杆">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-infra">基础设施</span><span class="card-time">12:28</span></div>
+<div class="card-title">运营商设备箱 · 电力通信共杆</div>
+<div class="card-desc">一根电线杆同时承载：高压输电横担、运营商光缆分配箱、监控摄像头。典型共杆共缆节约用地模式。</div>
+<div class="chain">
+<div style="font-weight:600;margin-bottom:6px">📶 你的WiFi信号经过这里到达互联网：</div>
+<div class="chain-item"><div class="chain-dot"></div>手机/电脑 → 家用路由器</div>
+<div class="chain-item"><div class="chain-dot"></div>楼道光猫 → 小区交换机</div>
+<div class="chain-item" style="color:#e85d3a;font-weight:600"><div class="chain-dot" style="background:#e85d3a"></div>↑ 这根杆上的运营商设备箱 ↑</div>
+<div class="chain-item"><div class="chain-dot"></div>城域网 → 骨干网 → 互联网</div>
+</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0635,30.6565&name=运营商设备杆" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?ll=30.6565,104.0635&q=观察点" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="nature">
+<img src="compressed_IMG_7223.JPG" alt="城市河道">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-nature">绿化水系</span><span class="card-time">13:05</span></div>
+<div class="card-title">城市河道 · 亲水台阶步道</div>
+<div class="card-desc">成都城区支流，水面宽约15-20米，水质清澈。两侧台阶式亲水步道，坡面绿化自然生长，芦苇丛可见。</div>
+<div class="insight"><b>房价溢价：</b>成都河道两岸房价普遍高于同区域均价15-30%，景观资源直接转化为地产价值。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="https://uri.amap.com/marker?position=104.0620,30.6550&name=城市河道" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="https://maps.apple.com/?ll=30.6550,104.0620&q=河道" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+<p>📍 成都 · 锦江区 · 书院街街道周边<br>2026年4月23日 步行记录<br>坐标为近似值，用于地图导航参考</p>
+<div class="made">用代码记录所见 · 静态网页</div>
+</div>
+</div> <button id="saveBtn">生成长名信片</button>
+
+<script>
+function filterCards(cat,el){
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+el.classList.add('active');
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';
+});
+}
+
+// 截图逻辑
+document.getElementById('saveBtn').onclick = function() {
+    const target = document.getElementById('captureArea');
+    const btn = this;
+    btn.style.display = 'none'; // 隐藏按钮避免被截进去
+    
+    html2canvas(target, {
+        scale: 2, // 高清倍率
+        useCORS: true,
+        backgroundColor: "#f5f6fa"
+    }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = '成都·城市切片_-Pudgala.png';
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+        btn.style.display = 'block'; // 恢复按钮显示
+    });
+};
+</script>
 </body>
 </html>
