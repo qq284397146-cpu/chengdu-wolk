@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>成都 · 切片 (2026.04)</title>
+    <meta name="description" content="26.4.23/锦江-青羊。">
+    <meta property="og:title" content="成都 · 城市切片">
+    <meta property="og:description" content="2026年4月，一次步行的观察。">
+    <meta property="og:image" content="IMG_7208.JPG">
+    <link rel="shortcut icon" href="IMG_7208.JPG">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
     <style>
+        /* 基础重置 */
         * {margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
         :root {
             --ink:#1a1f2e;--sub:#5a6278;--line:#e8eaf2;--bg:#f5f6fa;--white:#fff;
             --accent:#2d6cdf;
         }
-        body {background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;min-height:100vh;padding-bottom:60px}
+        body {background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;min-height:100vh;padding-bottom:80px}
         
-        /* 黑色头部区域 */
+        /* 截图容器：包裹所有需要显示的内容 */
+        #captureArea { background: var(--bg); width: 100%; overflow: hidden; }
+
+        /* 黑色头部区域样式 */
         .hero {background:linear-gradient(145deg,#0f2027 0%,#203a43 50%,#2c5364 100%);padding:52px 20px 32px;position:relative;overflow:hidden}
         .hero::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0/30px 30px 0 0}
-        
         .hero-label {display:inline-block;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);font-size:11px;letter-spacing:2px;padding:4px 12px;border-radius:100px;margin-bottom:16px;backdrop-filter:blur(4px)}
         .hero h1 {color:#fff;font-size:26px;font-weight:700;line-height:1.2;margin-bottom:4px;position:relative}
         .hero p {color:rgba(255,255,255,0.55);font-size:13px;line-height:1.6;position:relative}
         
-        /* 【微信号专用样式：专业、干净】 */
+        /* 微信号样式 */
         .wechat-id {
-            color: rgba(255, 255, 255, 0.35); /* 淡淡的半透明白 */
+            color: rgba(255, 255, 255, 0.35);
             font-size: 11px;
             font-weight: 300;
             margin-top: 6px;
@@ -39,7 +47,10 @@
         .hero-stat .n {color:#fff;font-size:20px;font-weight:700}
         .hero-stat .l {color:rgba(255,255,255,0.45);font-size:10px;margin-top:2px}
 
-        /* 底部浮动按钮 */
+        /* 下方内容区域基础容器 */
+        .main-content { padding: 20px; }
+
+        /* 保存按钮悬浮样式 */
         #saveBtn {
             position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 9999;
             padding: 12px 30px; background: #1a1f2e; color: white;
@@ -59,7 +70,7 @@
             <p>2026年4月23日 · 书院街街道周边</p>
             <p>从医院到河道，记录路上所见</p>
             
-            <div class="wechat-id">WeChat: WeChat_ID</div>
+            <div class="wechat-id">WeChat: -Pudgala</div>
 
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -77,28 +88,32 @@
             </div>
         </div>
 
-        <div style="padding: 20px; text-align: center; color: #999;">
-            这里是你网页原有的下方内容区域...
+        <div class="main-content">
+            <div style="text-align: center; color: #999; padding: 40px 0;">
+                请在此处粘贴你原本网页下方的 HTML 内容（如分类、记录日志等）
+            </div>
         </div>
     </div>
 
-    <button id="saveBtn">生成名信片</button>
+    <button id="saveBtn">生成长名信片</button>
 
     <script>
     document.getElementById('saveBtn').onclick = function() {
-        // 截取整个 #captureArea 区域，确保包含黑头和白底内容
+        // 抓取整个内容容器
         const target = document.getElementById('captureArea');
+        // 截图时隐藏按钮
         this.style.display = 'none';
         
         html2canvas(target, {
-            scale: 3, 
+            scale: 3, // 高清倍率，发朋友圈不模糊
             useCORS: true,
-            backgroundColor: "#f5f6fa" // 保证底部白色区域不透明
+            backgroundColor: "#f5f6fa" // 匹配 body 背景色
         }).then(canvas => {
             const link = document.createElement('a');
-            link.download = '成都_城市切片_长名信片.png';
+            link.download = '成都_城市切片_名信片.png';
             link.href = canvas.toDataURL("image/png");
             link.click();
+            // 截图完显示按钮
             this.style.display = 'block';
         });
     };
