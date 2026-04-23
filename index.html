@@ -2,143 +2,306 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
+  ```html
+<title>成都 · 切片 (2026.04)</title>
+<meta name="description" content="26.4.23/锦江-青羊。">
+<meta property="og:title" content="成都 · 城市切片">
+<meta property="og:description" content="2026年4月，一次步行的观察。">
+<meta property="og:image" content="IMG_7208.JPG"> <link rel="shortcut icon" href="IMG_7208.JPG"> ```
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>成都·城市切片 | 2026.04</title>
-<meta name="description" content="记录成都在 2026 年春天的街道细节、秩序与烟火。">
-<meta property="og:title" content="成都·城市切片 | 2026">
-<meta property="og:description" content="关于秩序之影与街头之火的视觉记录。">
-<meta property="og:image" content="IMG_7203.JPG">
-
+<title>成都城市切片 · 2026.04.23</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
-  --ink:#1a1f2e;--sub:#5a6278;--line:#e8eaf2;--bg:#f5f6fa;--white:#fff;
-  --accent:#2d6cdf;--chapter1:#4a90e2;--chapter2:#f5a623;
+--ink:#1a1f2e;--sub:#5a6278;--line:#e8eaf2;--bg:#f5f6fa;--white:#fff;
+--health:#00a878;--infra:#e85d3a;--urban:#3a7bd5;--nature:#6ab04c;--social:#9b59b6;--accent:#2d6cdf;
 }
 body{background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;min-height:100vh;padding-bottom:40px}
-.hero{background:linear-gradient(145deg,#1c2a48 0%,#2c3e50 100%);padding:60px 24px 40px;position:relative;overflow:hidden;text-align:center}
+.hero{background:linear-gradient(145deg,#0f2027 0%,#1a3a4a 50%,#0d3b2e 100%);padding:52px 20px 32px;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;bottom:-30px;left:0;right:0;height:60px;background:var(--bg);border-radius:50% 50% 0 0/30px 30px 0 0}
-.hero-label{display:inline-block;background:rgba(255,255,255,0.15);color:#fff;font-size:10px;letter-spacing:3px;padding:4px 16px;border-radius:20px;margin-bottom:16px;text-transform:uppercase}
-.hero h1{color:#fff;font-size:26px;font-weight:800;letter-spacing:1px;margin-bottom:10px}
-.hero p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.6}
-
-.tabs{display:flex;justify-content:center;gap:12px;padding:20px 16px;position:sticky;top:0;background:var(--bg);z-index:100}
-.tab{padding:8px 20px;border-radius:25px;font-size:13px;background:var(--white);color:var(--sub);box-shadow:0 2px 8px rgba(0,0,0,0.05);cursor:pointer;transition:0.3s}
-.tab.active{background:var(--ink);color:#fff}
-
-.section-title{padding:24px 20px 12px;font-size:18px;font-weight:800;display:flex;align-items:center;gap:8px}
-.section-title::before{content:'';width:4px;height:18px;background:var(--accent);border-radius:2px}
-
-.cards{padding:0 16px;display:flex;flex-direction:column;gap:20px}
-.card{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:0.3s}
-.card img{width:100%;height:240px;object-fit:cover;display:block;background:#eee}
-.card-body{padding:20px}
-.card-meta{font-size:11px;color:#bbb;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-.card-title{font-size:17px;font-weight:700;margin-bottom:8px;color:var(--ink)}
-.card-desc{font-size:14px;color:var(--sub);line-height:1.8;margin-bottom:15px}
-.quote{background:#f0f4f8;padding:12px 15px;border-radius:12px;font-size:13px;color:#4a5568;font-style:italic;line-height:1.6;position:relative}
-
-.footer{margin:40px 16px 0;padding:30px;text-align:center;border-top:1px solid var(--line)}
-.footer p{font-size:12px;color:#aaa;line-height:1.8}
+.hero-label{display:inline-block;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.7);font-size:11px;letter-spacing:2px;padding:4px 12px;border-radius:20px;margin-bottom:14px}
+.hero h1{color:#fff;font-size:24px;font-weight:700;line-height:1.3;margin-bottom:8px;position:relative}
+.hero p{color:rgba(255,255,255,0.55);font-size:13px;line-height:1.6;position:relative}
+.hero-stats{display:flex;margin-top:24px;background:rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;position:relative}
+.hero-stat{flex:1;padding:12px 8px;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
+.hero-stat:last-child{border-right:none}
+.hero-stat .n{color:#fff;font-size:20px;font-weight:700}
+.hero-stat .l{color:rgba(255,255,255,0.45);font-size:10px;margin-top:2px}
+.tabs{display:flex;gap:8px;padding:28px 16px 12px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:6px 14px;border-radius:20px;font-size:12px;border:1.5px solid var(--line);background:var(--white);color:var(--sub);cursor:pointer;white-space:nowrap}
+.tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.section-head{padding:4px 16px 10px;font-size:12px;color:var(--sub);letter-spacing:1px}
+.cards{padding:0 16px;display:flex;flex-direction:column;gap:14px}
+.card{background:var(--white);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card-body{padding:14px 16px 16px}
+.card-meta{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.card-tag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px}
+.tag-health{background:#e8f8f3;color:var(--health)}
+.tag-infra{background:#fef0ec;color:var(--infra)}
+.tag-urban{background:#eaf2fe;color:var(--urban)}
+.tag-nature{background:#f0f8e8;color:var(--nature)}
+.tag-social{background:#f5eeff;color:var(--social)}
+.card-time{font-size:11px;color:var(--sub)}
+.card-title{font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.4}
+.card-desc{font-size:13px;color:var(--sub);line-height:1.7;margin-bottom:14px}
+.insight{background:#f8f9ff;border-left:3px solid var(--accent);padding:10px 12px;border-radius:0 8px 8px 0;font-size:12px;color:#3a4a6a;line-height:1.6;margin-bottom:14px}
+.insight b{color:var(--accent)}
+.map-btns{display:flex;gap:8px}
+.map-btn{flex:1;padding:10px 8px;border-radius:10px;border:none;font-size:12px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;display:block}
+.btn-amap{background:#1aad19;color:#fff}
+.btn-apple{background:#000;color:#fff}
+.chain{margin:10px 0 14px;padding:12px;background:#f8f9ff;border-radius:10px;font-size:11px;color:#3a4a6a;line-height:2}
+.chain-item{display:flex;align-items:center;gap:6px}
+.chain-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.footer{margin:32px 16px 0;padding:20px;background:var(--white);border-radius:16px;text-align:center}
+.footer p{font-size:12px;color:var(--sub);line-height:1.8}
+.footer .made{font-size:11px;color:#bbb;margin-top:8px}
 </style>
 </head>
 <body>
 
 <div class="hero">
-  <div class="hero-label">CHENGDU · 2026</div>
-  <h1>城市切片记录</h1>
-  <p>在成都开启新生活的第一周<br>关于秩序之影与街头之火的碎片观察</p>
+<div class="hero-label">CHENGDU · 锦江区</div>
+<h1>成都城市切片<br>一次步行的观察</h1>
+<p>2026年4月23日 · 书院街街道周边<br>从医院到河道，记录路上所见</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="n">14</div><div class="l">观察点</div></div>
+<div class="hero-stat"><div class="n">5</div><div class="l">分类</div></div>
+<div class="hero-stat"><div class="n">~3km</div><div class="l">步行</div></div>
+<div class="hero-stat"><div class="n">锦江</div><div class="l">所在区</div></div>
+</div>
 </div>
 
 <div class="tabs">
-  <div class="tab active" onclick="filterCards('all',this)">全部</div>
-  <div class="tab" onclick="filterCards('order',this)">秩序之影</div>
-  <div class="tab" onclick="filterCards('life',this)">街头之火</div>
+<div class="tab active" onclick="filterCards('all',this)">全部</div>
+<div class="tab" onclick="filterCards('infra',this)">⚡ 基础设施</div>
+<div class="tab" onclick="filterCards('urban',this)">🏙️ 城市交通</div>
+<div class="tab" onclick="filterCards('social',this)">🏘️ 社区治理</div>
+<div class="tab" onclick="filterCards('nature',this)">🌿 绿化水系</div>
+<div class="tab" onclick="filterCards('health',this)">🏥 医疗</div>
 </div>
 
+<div class="section-head">今日记录 / TODAY'S LOG</div>
 <div class="cards" id="card-container">
 
-  <div class="section-title">CHAPTER 1: 秩序之影</div>
+<div class="card" data-cat="health">
+<img src="compressed_IMG_7192.JPG" alt="医院自助机">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-health">医疗</span><span class="card-time">11:41</span></div>
+<div class="card-title">三甲医院 · 智能自助服务机</div>
+<div class="card-desc">建设银行智能自助终端，支持发票打印、检验报告、门诊缴费、当日挂号。医院数字化程度较高，多数行政流程可自助完成。</div>
+<div class="insight"><b>观察：</b>三甲医院数字化已延伸至末梢流程，背后接入医保局统一平台。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0631,30.6598&name=成都市第二人民医院](https://uri.amap.com/marker?position=104.0631,30.6598&name=%E6%88%90%E9%83%BD%E5%B8%82%E7%AC%AC%E4%BA%8C%E4%BA%BA%E6%B0%91%E5%8C%BB%E9%99%A2)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?q=成都市第二人民医院&ll=30.6598,104.0631](https://maps.apple.com/?q=%E6%88%90%E9%83%BD%E5%B8%82%E7%AC%AC%E4%BA%8C%E4%BA%BA%E6%B0%91%E5%8C%BB%E9%99%A2&ll=30.6598,104.0631)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
-  <div class="card" data-cat="order">
-    <img src="IMG_7190.JPG" alt="Entry" loading="lazy">
-    <div class="card-body">
-      <div class="card-meta">2026.04 / 01</div>
-      <div class="card-title">新旅程的入场券</div>
-      <div class="card-desc">生活中总有些必经的流程。记录下这些数字和条码，作为新阶段的起点。</div>
-      <div class="quote">“在精确的流程里，感受到城市运行的确定性。”</div>
-    </div>
-  </div>
+<div class="card" data-cat="health">
+<img src="compressed_IMG_7191.JPG" alt="影像科走廊">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-health">医疗</span><span class="card-time">11:45</span></div>
+<div class="card-title">影像科走廊 · 放射防护标准配置</div>
+<div class="card-desc">标准放射科走廊，铅门+射线警示标志+黄黑警戒线，候诊座椅整洁。三甲医院放射科防护规范达标，硬件设施完善。</div>
+<div class="insight"><b>观察：</b>国内三甲医院放射防护硬件已与国际标准接轨，软件管理持续规范化。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0625,30.6603&name=影像科](https://uri.amap.com/marker?position=104.0625,30.6603&name=%E5%BD%B1%E5%83%8F%E7%A7%91)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6603,104.0625&q=影像科](https://maps.apple.com/?ll=30.6603,104.0625&q=%E5%BD%B1%E5%83%8F%E7%A7%91)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
-  <div class="card" data-cat="order">
-    <img src="IMG_7211.JPG" alt="Machine" loading="lazy">
-    <div class="card-body">
-      <div class="card-meta">2026.04 / 02</div>
-      <div class="card-title">冷峻的工业美学</div>
-      <div class="card-desc">公共空间里沉默运行的终端，金属感与冷白光的交织。</div>
-      <div class="quote">“这些高效运行的机器，是城市跳动的数字化脉搏。”</div>
-    </div>
-  </div>
+<div class="card" data-cat="health">
+<img src="compressed_IMG_7194.JPG" alt="影像科须知">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-health">医疗</span><span class="card-time">11:50</span></div>
+<div class="card-title">影像科取片须知 · 政策变化</div>
+<div class="card-desc">门诊患者次日下午4:30后自助取片。2025年6月15日起：X光/CT/MRI胶片改为收费提供，反映医院数字化转型进程。</div>
+<div class="insight"><b>趋势：</b>物理胶片逐步商品化，电子报告成为主流交付方式。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0618,30.6601&name=影像科取片处](https://uri.amap.com/marker?position=104.0618,30.6601&name=%E5%BD%B1%E5%83%8F%E7%A7%91%E5%8F%96%E7%89%87%E5%A4%84)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6601,104.0618&q=影像科](https://maps.apple.com/?ll=30.6601,104.0618&q=%E5%BD%B1%E5%83%8F%E7%A7%91)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
-  <div class="card" data-cat="order">
-    <img src="IMG_7195.JPG" alt="Warning" loading="lazy">
-    <div class="card-body">
-      <div class="card-meta">2026.04 / 03</div>
-      <div class="card-title">明确的边界感</div>
-      <div class="card-desc">红与黑的警示线条。生活有时需要一些边界，才显得安全而稳妥。</div>
-      <div class="quote">“秩序带来的安稳，往往藏在这些被忽略的标识里。”</div>
-    </div>
-  </div>
+<div class="card" data-cat="infra">
+<img src="compressed_IMG_7204.JPG" alt="老旧配电箱">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-infra">基础设施</span><span class="card-time">12:05</span></div>
+<div class="card-title">街边配电箱 · 胶带捆扎维修状态</div>
+<div class="card-desc">快餐店门口旁，大型配电箱门开着，内部线路外露，用透明胶带缠绕固定。门板锈迹严重，处于"能用就行"的维护状态。</div>
+<div class="insight"><b>对比：</b>德日城市此类设备基本地埋或入室。老城区改造成本高，历史遗留问题形成将就式维护逻辑。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0640,30.6590&name=配电箱观察点](https://uri.amap.com/marker?position=104.0640,30.6590&name=%E9%85%8D%E7%94%B5%E7%AE%B1%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6590,104.0640&q=观察点](https://maps.apple.com/?ll=30.6590,104.0640&q=%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
-  <div class="section-title">CHAPTER 2: 街头之火</div>
+<div class="card" data-cat="urban">
+<img src="compressed_IMG_7205.JPG" alt="十字路口">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-urban">城市交通</span><span class="card-time">12:08</span></div>
+<div class="card-title">十字路口 · 新旧建筑叠层</div>
+<div class="card-desc">电动车、摩托、轿车、共享单车同时通行。五六层老式公寓与玻璃幕墙高层并列。路口监控摄像头全覆盖。</div>
+<div class="insight"><b>观察：</b>电动车数量已超燃油摩托，反映低碳出行的自发转型趋势。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0650,30.6585&name=十字路口](https://uri.amap.com/marker?position=104.0650,30.6585&name=%E5%8D%81%E5%AD%97%E8%B7%AF%E5%8F%A3)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6585,104.0650&q=观察点](https://maps.apple.com/?ll=30.6585,104.0650&q=%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
-  <div class="card" data-cat="life">
-    <img src="IMG_7199.JPG" alt="Street" loading="lazy">
-    <div class="card-body">
-      <div class="card-meta">2026.04 / 04</div>
-      <div class="card-title">成都的参差感</div>
-      <div class="card-desc">玻璃幕墙高楼与转角处的街头食肆。</div>
-      <div class="quote">“走出安静的室内，瞬间跌进成都最迷人的烟火气里。”</div>
-    </div>
-  </div>
+<div class="card" data-cat="urban">
+<img src="compressed_IMG_7206.JPG" alt="公交车">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-urban">城市交通</span><span class="card-time">12:10</span></div>
+<div class="card-title">公交车身广告 · Move Free益节</div>
+<div class="card-desc">整车身广告：专业关节健康品牌。背后红砖旧式住宅与超高层对比强烈，架空电线密集穿越画面。</div>
+<div class="insight"><b>广告逻辑：</b>公交车身是成都覆盖率最高的线下广告媒介，精准触达中老年乘客。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0653,30.6582&name=公交沿线](https://uri.amap.com/marker?position=104.0653,30.6582&name=%E5%85%AC%E4%BA%A4%E6%B2%BF%E7%BA%BF)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6582,104.0653&q=观察点](https://maps.apple.com/?ll=30.6582,104.0653&q=%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
-  <div class="card" data-cat="life">
-    <img src="IMG_7203.JPG" alt="Skyline" loading="lazy">
-    <div class="card-body">
-      <div class="card-meta">2026.04 / 05</div>
-      <div class="card-title">云端的辽阔</div>
-      <div class="card-desc">云层压得很低，摩天大楼在灰色天幕下显得肃穆。</div>
-      <div class="quote">“在这个高度俯瞰，关于未来的想象力似乎也变得广阔了。”</div>
-    </div>
-  </div>
+<div class="card" data-cat="social">
+<img src="compressed_IMG_7207.JPG" alt="社区公告栏">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-social">社区治理</span><span class="card-time">12:15</span></div>
+<div class="card-title">福宇街社区 · 居务公示栏</div>
+<div class="card-desc">锦江区书院街街道。覆盖0.40平方公里，住宅5203户，常住人口10407人。公示居委会成员、年度工作计划、财务情况。</div>
+<div class="insight"><b>治理模式：</b>社区将治理信息全部公开上墙，选择了最低技术门槛的公示方式，便于居民查阅。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0655,30.6580&name=福宇街社区](https://uri.amap.com/marker?position=104.0655,30.6580&name=%E7%A6%8F%E5%AE%87%E8%A1%97%E7%A4%BE%E5%8C%BA)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6580,104.0655&q=福宇街社区](https://maps.apple.com/?ll=30.6580,104.0655&q=%E7%A6%8F%E5%AE%87%E8%A1%97%E7%A4%BE%E5%8C%BA)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
-  <div class="card" data-cat="life">
-    <img src="IMG_7198.JPG" alt="Wires" loading="lazy">
-    <div class="card-body">
-      <div class="card-meta">2026.04 / 06</div>
-      <div class="card-title">城市的毛细血管</div>
-      <div class="card-desc">杂乱却充满生命力的电缆线，横穿过翠绿的行道树。</div>
-      <div class="quote">“粗粝、真实。这些野蛮生长的痕迹，才是生活本来的样子。”</div>
-    </div>
-  </div>
+<div class="card" data-cat="urban">
+<img src="compressed_IMG_7208.JPG" alt="共享单车">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-urban">城市交通</span><span class="card-time">12:18</span></div>
+<div class="card-title">共享单车聚集点 · 多品牌并存</div>
+<div class="card-desc">路口密集停放，黄色美团单车与青绿色青桔单车并列，数量超过50辆。高密度反映该路口骑行需求热度高。</div>
+<div class="insight"><b>全球领先：</b>国内共享单车渗透率全球最高，无桩停放模式已被多个国家和地区效仿。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0645,30.6575&name=共享单车聚集点](https://uri.amap.com/marker?position=104.0645,30.6575&name=%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6%E8%81%9A%E9%9B%86%E7%82%B9)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6575,104.0645&q=观察点](https://maps.apple.com/?ll=30.6575,104.0645&q=%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="urban">
+<img src="compressed_IMG_7209.JPG" alt="地铁入口">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-urban">城市交通</span><span class="card-time">12:22</span></div>
+<div class="card-title">地铁入口 · 贝壳找房广告</div>
+<div class="card-desc">入口上方大幅广告：贝壳找房"成都住好家"。玻璃护栏+花岗岩台阶，标准化程度高。</div>
+<div class="insight"><b>选位逻辑：</b>地铁入口正上方是最贵广告位之一，说明周边是活跃租购房需求区。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0660,30.6570&name=地铁站](https://uri.amap.com/marker?position=104.0660,30.6570&name=%E5%9C%B0%E9%93%81%E7%AB%99)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6570,104.0660&q=地铁站](https://maps.apple.com/?ll=30.6570,104.0660&q=%E5%9C%B0%E9%93%81%E7%AB%99)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="infra">
+<img src="compressed_IMG_7211.JPG" alt="电信设备杆">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-infra">基础设施</span><span class="card-time">12:28</span></div>
+<div class="card-title">运营商设备箱 · 电力通信共杆</div>
+<div class="card-desc">一根电线杆同时承载：高压输电横担、运营商光缆分配箱、监控摄像头。典型共杆共缆节约用地模式。</div>
+<div class="chain">
+<div style="font-weight:600;margin-bottom:6px">📶 你的WiFi信号经过这里到达互联网：</div>
+<div class="chain-item"><div class="chain-dot"></div>手机/电脑 → 家用路由器</div>
+<div class="chain-item"><div class="chain-dot"></div>楼道光猫 → 小区交换机</div>
+<div class="chain-item" style="color:#e85d3a;font-weight:600"><div class="chain-dot" style="background:#e85d3a"></div>↑ 这根杆上的运营商设备箱 ↑</div>
+<div class="chain-item"><div class="chain-dot"></div>城域网 → 骨干网 → 互联网</div>
+</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0635,30.6565&name=运营商设备杆](https://uri.amap.com/marker?position=104.0635,30.6565&name=%E8%BF%90%E8%90%A5%E5%95%86%E8%AE%BE%E5%A4%87%E6%9D%86)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6565,104.0635&q=观察点](https://maps.apple.com/?ll=30.6565,104.0635&q=%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="infra">
+<img src="compressed_IMG_7215.JPG" alt="变压器彩绘">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-infra">基础设施</span><span class="card-time">12:35</span></div>
+<div class="card-title">10kV变压器箱 · 热带植物彩绘</div>
+<div class="card-desc">城西10kV培南环网配电箱，外壁覆盖热带植物彩绘。高压危险警示标志嵌于画中，旁边还有未美化的灰色小配电箱形成对比。</div>
+<div class="insight"><b>城市美化：</b>成都推行街头基础设施彩绘工程，低成本提升街道颜值，多个城市均有类似做法。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0625,30.6560&name=彩绘变压器箱](https://uri.amap.com/marker?position=104.0625,30.6560&name=%E5%BD%A9%E7%BB%98%E5%8F%98%E5%8E%8B%E5%99%A8%E7%AE%B1)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6560,104.0625&q=观察点](https://maps.apple.com/?ll=30.6560,104.0625&q=%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="nature">
+<img src="compressed_IMG_7221.JPG" alt="绿化大道">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-nature">绿化水系</span><span class="card-time">12:50</span></div>
+<div class="card-title">宽幅绿化隔离带 · 高密度行道树</div>
+<div class="card-desc">主干道中央宽绿化带，树木郁闭度高，路灯杆上安装监控摄像头，共享单车停放在绿带旁。</div>
+<div class="insight"><b>降温效果：</b>成都绿化覆盖率约42%，夏季树荫下气温比无遮挡区低3-5°C。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0618,30.6555&name=绿化大道](https://uri.amap.com/marker?position=104.0618,30.6555&name=%E7%BB%BF%E5%8C%96%E5%A4%A7%E9%81%93)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6555,104.0618&q=观察点](https://maps.apple.com/?ll=30.6555,104.0618&q=%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="nature">
+<img src="compressed_IMG_7222.JPG" alt="广场喷泉">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-nature">绿化水系</span><span class="card-time">12:55</span></div>
+<div class="card-title">广场水景 · 停水喷泉+船形装置</div>
+<div class="card-desc">弧形台阶水景池，当前停水状态，底部积水泛黄。池中有黑色磨光石材船形雕塑。</div>
+<div class="insight"><b>维护成本：</b>运营大型广场喷泉年费可达数十万，很多城市在非旅游旺季停运节约成本。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0615,30.6552&name=广场水景](https://uri.amap.com/marker?position=104.0615,30.6552&name=%E5%B9%BF%E5%9C%BA%E6%B0%B4%E6%99%AF)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6552,104.0615&q=观察点](https://maps.apple.com/?ll=30.6552,104.0615&q=%E8%A7%82%E5%AF%9F%E7%82%B9)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
+
+<div class="card" data-cat="nature">
+<img src="compressed_IMG_7223.JPG" alt="城市河道">
+<div class="card-body">
+<div class="card-meta"><span class="card-tag tag-nature">绿化水系</span><span class="card-time">13:05</span></div>
+<div class="card-title">城市河道 · 亲水台阶步道</div>
+<div class="card-desc">成都城区支流，水面宽约15-20米，水质清澈。两侧台阶式亲水步道，坡面绿化自然生长，芦苇丛可见。</div>
+<div class="insight"><b>房价溢价：</b>成都河道两岸房价普遍高于同区域均价15-30%，景观资源直接转化为地产价值。</div>
+<div class="map-btns">
+<a class="map-btn btn-amap" href="[https://uri.amap.com/marker?position=104.0620,30.6550&name=城市河道](https://uri.amap.com/marker?position=104.0620,30.6550&name=%E5%9F%8E%E5%B8%82%E6%B2%B3%E9%81%93)" target="_blank">高德导航</a>
+<a class="map-btn btn-apple" href="[https://maps.apple.com/?ll=30.6550,104.0620&q=河道](https://maps.apple.com/?ll=30.6550,104.0620&q=%E6%B2%B3%E9%81%93)" target="_blank">苹果地图</a>
+</div>
+</div>
+</div>
 
 </div>
 
 <div class="footer">
-  <p>2026 · 成都 · 锦江区 · 随笔记录<br>Designed & Coded with Passion</p>
+<p>📍 成都 · 锦江区 · 书院街街道周边<br>2026年4月23日 步行记录<br>坐标为近似值，用于地图导航参考</p>
+<div class="made">用代码记录所见 · 静态网页</div>
 </div>
 
 <script>
 function filterCards(cat,el){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  el.classList.add('active');
-  document.querySelectorAll('.card').forEach(c=>{
-    c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';
-  });
-  // 切换章节标题的显示
-  document.querySelectorAll('.section-title').forEach(st=>{
-      st.style.display = (cat==='all') ? 'flex' : 'none';
-  });
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+el.classList.add('active');
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=(cat==='all'||c.dataset.cat===cat)?'block':'none';
+});
 }
 </script>
 </body>
